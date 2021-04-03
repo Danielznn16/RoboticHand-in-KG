@@ -165,7 +165,7 @@ def main(args):
         classifier = classifier.apply(lambda x: bn_momentum_adjust(x,momentum))
 
         '''learning one epoch'''
-        for i, data in tqdm(enumerate(trainDataLoader), total=len(trainDataLoader), smoothing=0.9):
+        for i, data in tqdm(enumerate(trainDataLoader), total=len(trainDataLoader), smoothing=0.9, ascii=True):
             points, label, target = data
             points = points.data.numpy()
             points[:,:, 0:3] = provider.random_scale_point_cloud(points[:,:, 0:3])
@@ -199,7 +199,7 @@ def main(args):
                 for label in seg_classes[cat]:
                     seg_label_to_cat[label] = cat
 
-            for batch_id, (points, label, target) in tqdm(enumerate(testDataLoader), total=len(testDataLoader), smoothing=0.9):
+            for batch_id, (points, label, target) in tqdm(enumerate(testDataLoader), total=len(testDataLoader), smoothing=0.9, ascii=True):
                 cur_batch_size, NUM_POINT, _ = points.size()
                 points, label, target = points.float().cuda(), label.long().cuda(), target.long().cuda()
                 points = points.transpose(2, 1)
