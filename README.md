@@ -2,6 +2,10 @@
 Classification uses PointNet,  Below is the original git README from an online implementation of PointNet(++)
 My works are mainly arranged as `.ipynb` files
 
+## google image downloader
+
+From `https://github.com/Joeclinton1/google-images-download.git`
+
 
 # Pytorch Implementation of PointNet and PointNet++ 
 
@@ -93,11 +97,11 @@ python test_semseg.py --log_dir pointnet2_sem_seg --test_area 5 --visual
 ```
 Visualization results will save in `log/sem_seg/pointnet2_sem_seg/visual/` and you can visualize these .obj file by [MeshLab](http://www.meshlab.net/).
 ### Performance on sub-points of raw dataset (processed by official PointNet [Link](https://shapenet.cs.stanford.edu/media/indoor3d_sem_seg_hdf5_data.zip))
-|Model  | Class avg IoU | 
+|Model  | Class avg IoU |
 |--|--|
 | PointNet (Official) | 41.1|
 | PointNet (Pytorch) | 48.9|
-| PointNet2 (Official) |N/A | 
+| PointNet2 (Official) |N/A |
 | PointNet2_ssg (Pytorch) | **53.2**|
 ### Performance on raw dataset
 still on testing...
